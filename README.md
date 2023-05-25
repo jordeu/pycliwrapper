@@ -1,12 +1,14 @@
 # Generic Python CLI Wrapper
 
-Proof of concept class to automatically wrap any CLI to Python like syntax.
+Wrap any CLI tool to Python like syntax.
 
 ## Usage example
 
 ```
 from pycliwrapper import CliWrapper
 apt_cache = CliWrapper("apt-cache", parser=lambda stdout: stdout.splitlines())
+
+# Equivalent to run: "apt-cache search bash" 
 res = ~apt_cache.search.bash
 print(res)
 ```
